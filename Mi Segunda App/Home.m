@@ -21,9 +21,6 @@ static int myCounter;
 
 - (IBAction)changeButtonPressed:(id)sender {
     myCounter++;    
-    if (myCounter == 5) {
-        myCounter = 0;
-    }
     switch (myCounter) {
         case 1:
             self.lblWelcome.text = @"Primer click!";
@@ -44,6 +41,7 @@ static int myCounter;
          case 5:
             self.lblWelcome.text = @"Quinto click!";
             self.lblWelcome.textColor = [UIColor purpleColor];
+            myCounter = 0;
             break; 
     }
     
