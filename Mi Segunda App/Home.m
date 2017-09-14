@@ -7,7 +7,7 @@
 //
 
 #import "Home.h"
-
+static int myCounter;
 @interface Home ()
 
 @end
@@ -20,7 +20,33 @@
 }
 
 - (IBAction)changeButtonPressed:(id)sender {
-    self.lblWelcome.text = @"Mentira!";
+    myCounter++;    
+    if (myCounter == 5) {
+        myCounter = 0;
+    }
+    switch (myCounter) {
+        case 1:
+            self.lblWelcome.text = @"Primer click!";
+            self.lblWelcome.textColor = [UIColor whiteColor];
+            break;
+        case 2:
+            self.lblWelcome.text = @"Segundo click!";
+            self.lblWelcome.textColor = [UIColor blackColor];
+            break; 
+        case 3:
+            self.lblWelcome.text = @"Tercero click!";
+            self.lblWelcome.textColor = [UIColor redColor];
+            break; 
+        case 4:
+            self.lblWelcome.text = @"Cuarto click!";
+            self.lblWelcome.textColor = [UIColor greenColor];
+            break; 
+         case 5:
+            self.lblWelcome.text = @"Quinto click!";
+            self.lblWelcome.textColor = [UIColor purpleColor];
+            break; 
+    }
+    
 
 }
 
